@@ -16,42 +16,167 @@ import "../styles/global.css";
     <Navbar />
 
     <!-- Hero / Home Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center p-10">
-      <div class="text-center">
-        <h1 class="text-4xl md:text-6xl font-bold">Hi, I'm Marco</h1>
-        <p class="text-lg mt-4 max-w-xl mx-auto">
-          MSc in Mathematics · Passionate about Computer Science, Machine Learning & Data Science
-        </p>
-      </div>
-    </section>
+   <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+  <!-- Sfondo con effetto gradient o pattern -->
+  <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-black z-0"></div>
+  
+  <div class="relative z-10">
+    <h1 class="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+      Hi, I'm Marco
+    </h1>
+    <p class="text-xl max-w-2xl text-gray-300 leading-relaxed mb-8">
+      MSc in Mathematics · Passionate about Machine Learning, Scientific Computing, and Web Development.
+    </p>
+    
+    <div class="flex gap-4 justify-center mb-12">
+      <a href="#projects" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition duration-300">View Projects</a>
+      <a href="#contact" class="px-6 py-3 border border-blue-400 hover:bg-blue-900 hover:bg-opacity-30 rounded-lg transition duration-300">Contact Me</a>
+    </div>
+  </div>
+  
+  <!-- Icone con animazione migliorata -->
+  <div class="w-full overflow-hidden mt-10 relative z-10">
+    <div class="flex animate-marquee gap-14 whitespace-nowrap opacity-80">
+      <img src="/icons/python.svg" alt="Python" class="h-10" />
+      <img src="/icons/tailwindcss.svg" alt="TailwindCSS" class="h-10" />
+      <img src="/icons/astro.svg" alt="Astro" class="h-10" />
+      <img src="/icons/git.svg" alt="Git" class="h-10" />
+      <img src="/icons/github.svg" alt="GitHub" class="h-10" />
+    </div>
+  </div>
+</section>
+
 
     <!-- About Section -->
     <AboutMe />
 
     <!-- Projects Section -->
-    <section id="projects" class="min-h-screen bg-gray-900 p-10">
-      <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <ProjectCard
-          title="Option Pricing Model"
-          description="A Python tool to price European options with Black-Scholes and Monte Carlo."
-          github="https://github.com/marco/option-pricing"
-        />
-        <!-- Aggiungi altri ProjectCard qui -->
+    <section id="projects" class="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950 py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4">Projects</h2>
+        <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12">
+          A selection of my personal projects and experiments
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ProjectCard
+            title="Option Pricing Model"
+            description="A Python tool to price European options with Black-Scholes and Monte Carlo."
+            github="https://github.com/marco/option-pricing"
+            technologies={["Python", "NumPy", "Matplotlib"]}
+            image="/images/project1.jpg"
+          />
+          
+          <ProjectCard
+            title="Data Visualization Dashboard"
+            description="Interactive dashboard for financial data analysis using Plotly and Dash."
+            github="https://github.com/marco/data-viz"
+            technologies={["Python", "Plotly", "Dash"]}
+            image="/images/project2.jpg"
+          />
+          
+          <ProjectCard
+            title="Personal Portfolio"
+            description="This website built with Astro and TailwindCSS."
+            github="https://github.com/lemarco95/astro-portfolio"
+            technologies={["Astro", "TailwindCSS"]}
+            image="/images/project3.jpg"
+          />
+        </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="min-h-screen bg-gray-950 p-10">
-      <h2 class="text-3xl font-bold text-center mb-10">Contact</h2>
-      <div class="text-center">
-        <p class="mb-4">Email me at</p>
-        <a href="mailto:tuamail@gmail.com" class="text-blue-400 underline">tuamail@gmail.com</a>
-        <div class="mt-6 flex justify-center gap-4">
-          <a href="https://linkedin.com/in/tuonome" target="_blank" class="hover:text-blue-300">LinkedIn</a>
-          <a href="https://github.com/tuouser" target="_blank" class="hover:text-blue-300">GitHub</a>
+    <section id="contact" class="min-h-screen bg-gradient-to-b from-gray-950 to-black p-10 flex items-center">
+  <div class="max-w-4xl mx-auto w-full">
+    <h2 class="text-3xl font-bold text-center mb-6">Let's Connect</h2>
+    <p class="text-center text-gray-400 max-w-xl mx-auto mb-10">
+      Feel free to reach out for collaborations or just a chat about mathematics, data science, or web development!
+    </p>
+    
+    <div class="bg-gray-900 rounded-2xl p-8 border border-gray-800 shadow-lg">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <!-- Email icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <div>
+                <p class="text-sm text-gray-400">Email</p>
+                <a href="mailto:lecci.marco95@gmail.com" class="text-blue-400 hover:underline">lecci.marco95@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <!-- Location icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <div>
+                <p class="text-sm text-gray-400">Location</p>
+                <p>Italy</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <h4 class="text-lg font-medium mb-3">Connect with me</h4>
+            <div class="flex gap-4">
+              <a href="https://www.linkedin.com/in/marco-lecci-8824a1306/" target="_blank" class="bg-gray-800 hover:bg-blue-900 p-3 rounded-full transition">
+                <!-- LinkedIn icon -->
+                <span class="sr-only">LinkedIn</span>
+              </a>
+              <a href="https://github.com/lemarco95" target="_blank" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition">
+                <!-- GitHub icon -->
+                <span class="sr-only">GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Send me a message</h3>
+          <form class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm text-gray-400 mb-1">Name</label>
+              <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label for="email" class="block text-sm text-gray-400 mb-1">Email</label>
+              <input type="email" id="email" name="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label for="message" class="block text-sm text-gray-400 mb-1">Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"></textarea>
+            </div>
+            <button type="submit" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition w-full">Send Message</button>
+          </form>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-black py-8 px-6 border-t border-gray-800">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <p class="text-gray-400">&copy; 2025 Marco Lecci</p>
+      </div>
+      <div>
+        <ul class="flex gap-6 text-gray-400">
+          <li><a href="#home" class="hover:text-white">Home</a></li>
+          <li><a href="#about" class="hover:text-white">About</a></li>
+          <li><a href="#projects" class="hover:text-white">Projects</a></li>
+          <li><a href="#contact" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
   </body>
 </html>

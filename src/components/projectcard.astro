@@ -1,0 +1,39 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  github: string;
+  technologies?: string[];
+  image?: string;
+}
+
+const { title, description, github, technologies = [], image = "/images/project-placeholder.jpg" } = Astro.props;
+---
+
+<div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 transition-transform hover:transform hover:-translate-y-1">
+  <div class="h-48 overflow-hidden">
+    <img src={image} alt={title} class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold">{title}</h3>
+    <p class="mt-2 text-gray-300">{description}</p>
+    
+    {technologies.length > 0 && (
+      <div class="mt-4 flex flex-wrap gap-2">
+        {technologies.map(tech => (
+          <span class="px-2 py-1 bg-gray-700 rounded-md text-xs">{tech}</span>
+        ))}
+      </div>
+    )}
+    
+    <div class="mt-6">
+      <a href={github} target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition">
+        <span>View on GitHub</span>
+        <!-- GitHub icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
