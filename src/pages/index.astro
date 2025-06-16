@@ -1,16 +1,57 @@
 ---
-
+import Navbar from '../components/Navbar.astro';
+import AboutMe from '../components/aboutme.astro';
+import ProjectCard from '../components/projectcard.astro';
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marco | Mathematician & ML Enthusiast</title>
+  </head>
+  <body class="bg-black text-white scroll-smooth">
+    <!-- Navbar -->
+    <Navbar />
+
+    <!-- Hero / Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center p-10">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold">Hi, I'm Marco</h1>
+        <p class="text-lg mt-4 max-w-xl mx-auto">
+          MSc in Mathematics · Passionate about Computer Science, Machine Learning & Data Science
+        </p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <AboutMe />
+
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen bg-gray-900 p-10">
+      <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <ProjectCard
+          title="Option Pricing Model"
+          description="A Python tool to price European options with Black-Scholes and Monte Carlo."
+          github="https://github.com/marco/option-pricing"
+        />
+        <!-- Aggiungi altri ProjectCard qui -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen bg-gray-950 p-10">
+      <h2 class="text-3xl font-bold text-center mb-10">Contact</h2>
+      <div class="text-center">
+        <p class="mb-4">Email me at</p>
+        <a href="mailto:tuamail@gmail.com" class="text-blue-400 underline">tuamail@gmail.com</a>
+        <div class="mt-6 flex justify-center gap-4">
+          <a href="https://linkedin.com/in/tuonome" target="_blank" class="hover:text-blue-300">LinkedIn</a>
+          <a href="https://github.com/tuouser" target="_blank" class="hover:text-blue-300">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
